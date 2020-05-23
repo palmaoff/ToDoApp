@@ -1,0 +1,29 @@
+.todo_list {
+    display: grid;
+	grid-template-areas: "ch t b";
+	grid-template-columns: 20px 4fr 80px;
+    border-radius: 2px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+    background: #f4f4f4;
+    margin-bottom: 2px;
+    border-left: 2px solid #e6e7e8;
+    color: #444;
+    margin: 5px auto
+}
+.todo_list > .text {
+    grid-area: t;
+    margin: auto 0;
+}
+
+.todo_list > btn {
+    grid-area: b;
+}
+
+.todo_list > .check_box {
+    grid-area: ch;
+    margin: auto;
+}
