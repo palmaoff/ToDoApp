@@ -2,13 +2,13 @@ let DELETE = "DELETE-TASK"
 let ADD = "ADD-TASK"
 let UPDATE_FIELD = "UPDATE-FIELD"
 let SHOW = "SHOW"
+let CHECK = "CHECK"
 
 let init_state = {
-	showNewTask: true,
+	showNewTask: false,
 	Field: '',
 	Tasks: [
-		{ message: 'first task' },
-		{ message: 'second task' }
+		{ message: 'do a new task', show: true }
 	]
 }
 
@@ -39,11 +39,19 @@ export let addTaskActionCreator = (text) => {
 	}
 }
 
+export let checkActionCreator = (i) => {
+	return {
+		type: CHECK,
+		i: i
+	}
+}
+
 let tasks_reduse = (state = init_state, action) => {
 	switch (action.type) {
 		case ADD:
 			let newTask = {
-				message: action.text
+				message: action.text,
+				show: false
 			}
 			if (action.text != '') {
 				state.Tasks.push(newTask)
@@ -60,6 +68,13 @@ let tasks_reduse = (state = init_state, action) => {
 			}
 			else {
 				state.showNewTask = true
+			}
+			return state
+		case CHECK:
+			if (state.Tasks[action.i].show === true) {
+				state.Tasks[action.i].show = false
+			} else {
+				state.Tasks[action.i].show = true
 			}
 			return state
 		case DELETE:

@@ -1,6 +1,6 @@
 import React from 'react'
 import TasksList from './TasksList'
-import { deleteActionCreator } from './../../redux/tasks_reducer'
+import { deleteActionCreator, checkActionCreator } from './../../redux/tasks_reducer'
 
 let TasksListContainter = (props) => {
 	
@@ -10,9 +10,14 @@ let TasksListContainter = (props) => {
 		props.store.dispatch(deleteActionCreator(i))
 	}
 
+	let checkTask = (i) => {
+		props.store.dispatch(checkActionCreator(i))
+	}
+
 	return (
 		<TasksList 	Tasks = { state.tasks.Tasks } 
-					deleteTask = { deleteTask } />
+					deleteTask = { deleteTask }
+					checkTask={checkTask} />
 	)
 }
 
