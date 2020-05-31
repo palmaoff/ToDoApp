@@ -1,8 +1,10 @@
 let DELETE = "DELETE-TASK"
 let ADD = "ADD-TASK"
 let UPDATE_FIELD = "UPDATE-FIELD"
+let SHOW = "SHOW"
 
 let init_state = {
+	showNewTask: true,
 	Field: '',
 	Tasks: [
 		{ message: 'first task' },
@@ -17,9 +19,22 @@ export let deleteActionCreator = (i) => {
 	}
 }
 
+export let showNewTaskActionCreater = () => {
+	return {
+		type: SHOW
+	}
+}
+
 export let updateTextActionCreator = (text) => {
 	return {
 		type: UPDATE_FIELD,
+		text: text
+	}
+}
+
+export let addTaskActionCreator = (text) => {
+	return {
+		type: ADD,
 		text: text
 	}
 }
@@ -30,10 +45,22 @@ let tasks_reduse = (state = init_state, action) => {
 			let newTask = {
 				message: action.text
 			}
-			state.Tasks.unshift(newTask)
+			if (action.text != '') {
+				state.Tasks.push(newTask)
+			}
 			return state
 		case UPDATE_FIELD:
-			state.Field = action.text
+			if (action.text != "\n") {
+				state.Field = action.text
+			}
+			return state
+		case SHOW:
+			if (state.showNewTask === true) {
+				state.showNewTask = false
+			}
+			else {
+				state.showNewTask = true
+			}
 			return state
 		case DELETE:
 			state.Tasks.splice(action.i, 1)

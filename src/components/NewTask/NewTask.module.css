@@ -1,5 +1,11 @@
 .form {
+	display: flex;
 	margin: 15px auto;
 	padding: 5px 0 5px 10px;
     background: #f4f4f4;
+}
+
+.text {
+	border-radius: 7px;
+	margin: 0 5px 0 0;
 }

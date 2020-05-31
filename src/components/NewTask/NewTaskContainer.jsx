@@ -1,8 +1,7 @@
 import React from 'react'
 import { Button, FormCheck, Form } from 'react-bootstrap'
 import NewTask from './NewTask'
-import { addTaskActionCreator } from '../../redux/newTask_reducer'
-import { updateTextActionCreator } from '../../redux/tasks_reducer'
+import { updateTextActionCreator, addTaskActionCreator } from '../../redux/tasks_reducer'
 
 const NewTaskContainer = (props) => {
 

@@ -25,14 +25,13 @@ const NewTask = (props) => {
 
 	return (
 		<Form className={css.form}>
-			<Form.Group>
-				<Form.Label>New task</Form.Label>
-				<Form.Control ref={newText}
+			<textarea className={css.text}
+					ref={newText}
 					value={props.field}
 					onChange={onUpdateField}
 					placeholder="Enter what to do"
-					onKeyPress={enterKey} />
-			</Form.Group>
+					onKeyPress={enterKey}
+					rows="1" /> 
 			<Button variant="primary" onClick={onAddTask}>
 				Add
   			</Button>

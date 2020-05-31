@@ -1,6 +1,5 @@
 import { createStore, combineReducers } from 'redux'
 import tasks_reduse from './tasks_reducer'
-import newTask_reduce from './newTask_reducer'
 
 
 let reducers = combineReducers({
