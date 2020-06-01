@@ -31,6 +31,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Shots of app
+## Shot of app
 
 ![alt text](https://github.com/palmaoff/todo_app/blob/master/app_to_do.png)
