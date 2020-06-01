@@ -4,6 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 You able to add/delete task and use add Task buuton to hide/show new task field
 
+## Install
+
+```
+git clone https://github.com/palmaoff/todo_app.git
+cd todo_app
+npm install
+npm start
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
