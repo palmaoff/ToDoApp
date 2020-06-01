@@ -31,4 +31,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Shots of app
 
-!(https://github.com/palmaoff/todo_app/blob/master/app_to_do.png)
+![alt text](https://github.com/palmaoff/todo_app/blob/master/app_to_do.png)
